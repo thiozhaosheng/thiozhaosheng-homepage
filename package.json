@@ -1,0 +1,29 @@
+{
+  "name": "thiozhaosheng-homepage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next-dev -H 0.0.0.0",
+    "build": "next-build",
+    "prettier": "prettier -write .",
+    "lint": "next-lint"
+  },
+  "keywords": [],
+  "author": "Travis Thio<hello@travisthio.com>",
+  "license": "MIT",
+  "description": "Travis's Website",
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "framer-motion": "^11.8.0",
+    "next": "^14.2.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": 
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.13",
+    "prettier": "^3.3.3"
+  }
+}
