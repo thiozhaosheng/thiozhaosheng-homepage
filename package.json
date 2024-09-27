@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next-dev -H 0.0.0.0",
+    "dev": "next dev -H 0.0.0.0",
     "build": "next-build",
     "prettier": "prettier -write .",
     "lint": "next-lint"
@@ -13,6 +13,7 @@
   "license": "MIT",
   "description": "Travis's Website",
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -21,7 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "devDependencies": 
+  "devDependencies": {
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.13",
     "prettier": "^3.3.3"
