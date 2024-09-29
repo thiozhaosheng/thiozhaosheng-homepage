@@ -27,11 +27,11 @@ const Logo = () => {
           fontWeight="bold"
           ml={3}
         >
-          Travis Thio
+          &#123; Travis Thio &#125;
         </Text>
       </LogoBox>
     </Link>
-  );
+  )
 }
 
 export default Logo

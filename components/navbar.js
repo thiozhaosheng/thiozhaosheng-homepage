@@ -9,11 +9,13 @@ import {
   Flex,
   Menu,
   MenuItem,
+  MenuList,
   MenuButton,
   IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import ThemeToggleButton from './theme-toggle-button.js'
 
 const LinkItem = ({ href, path, children }) => {
   const active = path === href
@@ -28,7 +30,7 @@ const LinkItem = ({ href, path, children }) => {
         {children}
       </Link>
     </NextLink>
-  );
+  )
 }
 const NavBar = props => {
   const { path } = props
@@ -62,16 +64,10 @@ const NavBar = props => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
-        >
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Post
-          </LinkItem>
-        </Stack>
+        ></Stack>
 
         <Box flex={1} align="right">
+          <ThemeToggleButton />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
@@ -80,6 +76,23 @@ const NavBar = props => {
                 variant="outline"
                 aria-label="Options"
               />
+              <MenuList>
+                <NextLink href="/" passHref>
+                  <MenuItem as={Link}>About</MenuItem>
+                </NextLink>
+                <NextLink href="/works" passHref>
+                  <MenuItem as={Link}>Works</MenuItem>
+                </NextLink>
+                <NextLink href="/posts" passHref>
+                  <MenuItem as={Link}>Posts</MenuItem>
+                </NextLink>
+                <NextLink
+                  href="https://github.com/thiozhaosheng/thiozhaosheng-homepage"
+                  passHref
+                >
+                  <MenuItem as={Link}>View Source</MenuItem>
+                </NextLink>
+              </MenuList>
             </Menu>
           </Box>
         </Box>
