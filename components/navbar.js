@@ -16,8 +16,9 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button.js'
+import { IoLogoGithub } from 'react-icons/io5'
 
-const LinkItem = ({ href, path, children }) => {
+const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
   return (
@@ -64,7 +65,20 @@ const NavBar = props => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
-        ></Stack>
+        >
+          {' '}
+          <LinkItem
+            target="_blank"
+            href="https://github.com/thiozhaosheng/thiozhaosheng-homepage"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            Source
+          </LinkItem>
+        </Stack>
 
         <Box flex={1} align="right">
           <ThemeToggleButton />
@@ -80,12 +94,7 @@ const NavBar = props => {
                 <NextLink href="/" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
-                <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
-                </NextLink>
+
                 <NextLink
                   href="https://github.com/thiozhaosheng/thiozhaosheng-homepage"
                   passHref

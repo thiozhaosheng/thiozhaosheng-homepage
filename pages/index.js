@@ -1,13 +1,19 @@
+import NextLink from 'next/link'
 import {
   Container,
   Box,
   Heading,
   Image,
-  useColorModeValue
+  useColorModeValue,
+  Button,
+  List,
+  ListItem,
+  Link
 } from '@chakra-ui/react'
 import Section from '../components/section.js'
 import Paragraph from '../components/paragraph.js'
-import { BioYear, BioSection } from '../components/bio.js'
+import { EmailIcon } from '@chakra-ui/icons'
+import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io'
 const Page = () => {
   return (
     <Container>
@@ -78,6 +84,51 @@ const Page = () => {
           <br />
           If you want to chat or connect, just hit me up on LinkedIn!
         </Paragraph>
+      </Section>
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          On the web
+        </Heading>
+        <List>
+          <ListItem>
+            {' '}
+            <Link
+              href="https://www.linkedin.com/in/travisthio/"
+              target="_blank"
+            >
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoLinkedin />}
+              >
+                LinkedIn
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            {' '}
+            <Link href="mailto:hello@travisthio.com" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<EmailIcon />}
+              >
+                Email Me
+              </Button>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://github.com/thiozhaosheng" target="_blank">
+              <Button
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoGithub />}
+              >
+                @thiozhaosheng
+              </Button>
+            </Link>
+          </ListItem>
+        </List>
       </Section>
     </Container>
   )
